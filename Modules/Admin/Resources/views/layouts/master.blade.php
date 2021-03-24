@@ -26,11 +26,11 @@
             <li class="nav-item">
                 <a class="nav-link" href=""> Tổng quan</a>
             </li>
-{{--            @foreach(config('nav.admin.nav') as $nav)--}}
-{{--                <li class="nav-item {{ \Request::route()->getName() == $nav['route'] ? 'active' : '' }}">--}}
-{{--                    <a class="nav-link" href="{{ route($nav['route']) }}"> {{ $nav['name'] }}</a>--}}
-{{--                </li>--}}
-{{--            @endforeach--}}
+            @foreach(config('nav.admin.nav') as $nav)
+                <li class="nav-item {{ \Request::route()->getName() == $nav['route'] ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route($nav['route']) }}"> {{ $nav['name'] }}</a>
+                </li>
+            @endforeach
         </ul>
     </div>
 </nav>
