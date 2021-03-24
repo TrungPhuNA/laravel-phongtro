@@ -22,6 +22,12 @@ Route::prefix('admin')->group(function() {
     Route::prefix('category')->group(function() {
         Route::get('/', 'AdminCategoryController@index')->name('get_admin.category.index');
     });
+    Route::prefix('menu')->group(function() {
+        Route::get('/', 'AdminMenuController@index')->name('get_admin.menu.index');
+    });
+    Route::prefix('article')->group(function() {
+        Route::get('/', 'AdminArticleController@index')->name('get_admin.article.index');
+    });
     Route::prefix('location')->group(function() {
         Route::get('/', 'AdminLocationController@index')->name('get_admin.location.index');
     });

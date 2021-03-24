@@ -13,4 +13,8 @@
 
 Route::prefix('user')->group(function() {
     Route::get('/', 'UserController@index');
+    Route::get('/', 'UserProfileController@index')->name('get_user.profile');
+    Route::prefix('user')->group(function() {
+        Route::get('/', 'UserProductController@index')->name('get_user.product.index');
+    });
 });

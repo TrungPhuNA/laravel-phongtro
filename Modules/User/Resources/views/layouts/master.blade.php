@@ -24,13 +24,28 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href=""> Tổng quan</a>
+                <a class="nav-link" href=""> Thống kê</a>
             </li>
-            {{--            @foreach(config('nav.admin.nav') as $nav)--}}
-            {{--                <li class="nav-item {{ \Request::route()->getName() == $nav['route'] ? 'active' : '' }}">--}}
-            {{--                    <a class="nav-link" href="{{ route($nav['route']) }}"> {{ $nav['name'] }}</a>--}}
-            {{--                </li>--}}
-            {{--            @endforeach--}}
+            @foreach(config('nav.user.nav') as $nav)
+                <li class="nav-item {{ \Request::route()->getName() == $nav['route'] ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route($nav['route']) }}"> {{ $nav['name'] }}</a>
+                </li>
+            @endforeach
+        </ul>
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li class="nav-item dropdown">
+                <a class="nav-item nav-link dropdown-toggle mr-md-2" style="padding: 0" href="#" id="bd-versions" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <img src="https://www.w3schools.com/howto/img_avatar2.png" alt=""
+                         style="width: 40px;height: 40px;border-radius: 50%">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                    <a class="dropdown-item" href="">Cập nhật
+                        thông tin</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="">Thoát</a>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>
